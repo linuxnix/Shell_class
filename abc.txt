@@ -1,0 +1,70 @@
+# 0.1.0
+
+Initial release of wbc_nix_controlm code
+
+# 0.1.1
+Added support for pulling the code from git instead of a local reference.
+
+#0.1.2
+Fixed invalid reference feed into the mec_nix_controlm_agent resource. Was using a node variable as agent_to_agent_port instead of agent_to_server_port.
+Fixed invalid reference in berksfile to the customised cookbooks method, used cookbook instead of cookbooks. This fixed the berksfile error when parsed.
+Added ChefSpec for the recipes
+
+#0.1.3
+Added code to fix the file permissions for the directories and files so they match the requirements of the WBC account in relation to ControlM
+
+#0.1.4
+Added new recipe setup_environment. This will create two wrapper scripts for the controlm shut-ag and start-ag scripts. These scripts will be used as a reference in custom init.d scripts for service startup and shutdown.
+
+#0.1.5
+Added new functionality to populate the CONFIG.dat file with the following at install time.
+LOGKEEPDAYS
+AUTOEDIT_INLINE 
+LOGICAL_AGENT_NAME 
+
+#0.1.6
+Added some new resources to the setup_environment recipe to append two line into the OS.dat file
+
+#0.1.7
+Fixed bugs in the permission resources, mainly due to the fact the word arrays that held mutiple values were separated by a ',' not a space so they did not get processed properly. Added reference to logs sub directory for BMCINSTALL parent, the old permission was too restrictive as it took into account all sub directories, when it should have been just logs
+
+#0.2.0
+Added new functionality to enable the setup_environment recipe to used a template to create a startup/shutdown script in the init.d directory.
+
+#0.3.0
+Added new functionality that creates symlinks for the start/stop scripts for the various startup levels in linux, rc0, rc2, rc3, rc4, rc5
+
+#0.3.1
+General typo Bug fixes in the setup_environment recipe.
+
+#0.4.0
+Added new functionality to change the umask settings in the start-ag file to overcome an issues with CONFIG.dat
+
+#0.4.1
+Fixed template issues with the /etc/init.d/controlm script.
+Fixed permissions on the /etc/init.d/controlm script so it was set to 755
+Add "" around the CONTROLM environment settings in cshrc file, seemed that when the quotes were missing the setting never got applied.
+Added setup_environment recipe to the default recipe caller, so the recipe will be called at the end of the installation process.
+Added a reference to the mec_nix_file_utils cookbook in the Berksfile so the vendoring process will succeed.
+
+#0.4.2
+Fixed permission when creating the init script from the template
+Fixed unterminated string in the init script template to stop the generated script from failing. 
+
+#0.4.3
+Fixed user configuration requirements with gid, GECOS (Comments) and formatting. 
+Created reference to the GECOS (Comments) 'ctm_user_comments' within install_controlm.rb instead of statically defined comment.
+Fixed permissions for start-ag, ctmagent_shut and ctmagent_start
+
+##0.9.8 - 2017-11-01
+
+### Changed
+Fixed ctmagent home directory issue.
+
+Made required changes to run ControlM in kitchen properly.
+### Added
+Added more InSpec and chefspec test cases.
+
+### Fixed
+Fixed couple of path issue in cookbooks
+Fixed and updated files which are missing in IBM devops
