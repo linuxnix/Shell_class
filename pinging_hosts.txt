@@ -1,0 +1,24 @@
+PING facebook.com (157.240.20.35) 56(84) bytes of data.
+64 bytes from edge-star-mini-shv-02-frt3.facebook.com (157.240.20.35): icmp_seq=1 ttl=58 time=1.05 ms
+
+--- facebook.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.059/1.059/1.059/0.000 ms
+PING linuxnix.com (104.28.5.110) 56(84) bytes of data.
+64 bytes from 104.28.5.110: icmp_seq=1 ttl=61 time=0.883 ms
+
+--- linuxnix.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.883/0.883/0.883/0.000 ms
+PING cyberciti.biz (104.20.186.5) 56(84) bytes of data.
+64 bytes from 104.20.186.5: icmp_seq=1 ttl=61 time=0.812 ms
+
+--- cyberciti.biz ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.812/0.812/0.812/0.000 ms
+PING ozbargain.com.au (43.229.60.154) 56(84) bytes of data.
+64 bytes from bl01.delvu.net (43.229.60.154): icmp_seq=1 ttl=50 time=298 ms
+
+--- ozbargain.com.au ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 298.432/298.432/298.432/0.000 ms
